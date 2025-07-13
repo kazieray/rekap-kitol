@@ -1,13 +1,19 @@
-const SearchBar = () => {
+const SearchBar = ({ searchTerm, selectedKategori, onSearchChange, onKategoriChange }) => {
    return (
-      <form action="" className="flex flex-col sm:flex-row mt-8 gap-3 sm:gap-2 mb-4">
+      <form className="flex flex-col sm:flex-row mt-8 gap-3 sm:gap-2 mb-4">
          <input
             type="search"
             placeholder="Cari sesuatu..."
+            value={searchTerm}
+            onChange={(e) => onSearchChange(e.target.value)}
             className="w-full sm:flex-1 px-4 py-3 text-base border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-transparent transition-all duration-300"
          />
          <div className="relative w-full sm:w-40 z-10">
-            <select className="w-full px-4 py-3 text-base border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-transparent transition-all duration-300 bg-white appearance-none cursor-pointer">
+            <select
+               value={selectedKategori}
+               onChange={(e) => onKategoriChange(e.target.value)}
+               className="w-full px-4 py-3 text-base border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-transparent transition-all duration-300 bg-white appearance-none cursor-pointer"
+            >
                <option value="">Semua</option>
                <option value="alat">Alat</option>
                <option value="bahan">Bahan</option>
@@ -20,6 +26,6 @@ const SearchBar = () => {
          </div>
       </form>
    );
-}
+};
 
 export default SearchBar;
