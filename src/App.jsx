@@ -17,9 +17,21 @@ function App() {
                   <Lihat />
                </PrivateRoute>
             } />
-            <Route path="/buat" element={<Buat />} />
-            <Route path="/detail/:id" element={<DetailTrans />} />
-            <Route path="/update/:id" element={<UpdateTrans />} />
+            <Route path="/buat" element={
+               <PrivateRoute>
+                  <Buat />
+               </PrivateRoute>
+            } />
+            <Route path="/detail/:id" element={
+               <PrivateRoute>
+                  <DetailTrans />
+               </PrivateRoute>
+            } />
+            <Route path="/update/:id" element={
+               <PrivateRoute>
+                  <UpdateTrans />
+               </PrivateRoute>
+            } />
             <Route path="*" element={<NotFound />} />
          </Routes>
       </BrowserRouter>
