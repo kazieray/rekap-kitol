@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Login from "./pages/login";
+import Login from "./pages/Login";
 import Lihat from "./pages/Lihat";
 import Buat from "./pages/Buat";
 import DetailTrans from "./pages/DetailTrans";
