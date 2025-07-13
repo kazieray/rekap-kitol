@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+body {
+   font-family: Poppins, sans-serif;
+   background-color: #fcfcfc;
+}
+
+@layer theme {
+   .bg-gradient-plus {
+      background: linear-gradient(342deg, #e5ac00 51.61%, #ffcc53 90.59%);
+   }
+}
+
+@layer utilities {
+   .bg-leaf {
+      background-image: url("assets/bg-leaf.png");
+      object-position: center;
+      object-fit: contain;
+   }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+   width: 6px;
+   height: 6px;
+}
+
+::-webkit-scrollbar-track {
+   background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+   background: rgba(156, 163, 175, 0.5);
+   border-radius: 10px;
+   transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+   background: rgba(156, 163, 175, 0.8);
+}
+
+::-webkit-scrollbar-corner {
+   background: transparent;
+}
+
+/* Firefox scrollbar */
+* {
+   scrollbar-width: thin;
+   scrollbar-color: rgba(156, 163, 175, 0.5) transparent;
+}
