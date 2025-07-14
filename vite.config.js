@@ -10,7 +10,7 @@ export default defineConfig({
       tailwindcss(),
       VitePWA({
          registerType: "autoUpdate",
-         includeAssets: ["favicon.svg", "favicon.ico", "robots.txt", "apple-touch-icon.png"],
+         includeAssets: [],
          manifest: {
             name: "Rekap KITOL",
             short_name: "KITOL",
