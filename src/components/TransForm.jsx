@@ -283,6 +283,9 @@ const TransForm = ({ initialData = null, mode = "create", onSubmit, onCancel }) 
                            <option value="">Pilih kategori...</option>
                            <option value="alat">Alat</option>
                            <option value="bahan">Bahan</option>
+                           <option value="sewa">Sewa</option>
+                           <option value="perjalanan-lokal">Perjalanan Lokal</option>
+                           <option value="lain-lain">Lain-lain</option>
                         </select>
                         <div className="absolute inset-y-0 right-0 flex items-center px-3 pointer-events-none">
                            <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">

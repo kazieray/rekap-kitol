@@ -31,7 +31,11 @@ const Lihat = () => {
             return cocokJudul && cocokKategori;
          });
 
-         const grouped = filtered.reduce((acc, item) => {
+         const sortedData = filtered.sort((a, b) => {
+            return dayjs(b.tanggal).valueOf() - dayjs(a.tanggal).valueOf();
+         });
+
+         const grouped = sortedData.reduce((acc, item) => {
             const bulan = dayjs(item.tanggal).format("MMMM YYYY");
             if (!acc[bulan]) acc[bulan] = [];
             acc[bulan].push(item);
