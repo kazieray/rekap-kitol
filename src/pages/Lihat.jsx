@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, onSnapshot } from "firebase/firestore";
 import { db } from "../firebase";
 import Navbar from "../components/Navbar";
 import SearchBar from "../components/SearchBar";
@@ -15,8 +15,7 @@ const Lihat = () => {
    const [selectedKategori, setSelectedKategori] = useState("");
 
    useEffect(() => {
-      const fetchData = async () => {
-         const querySnapshot = await getDocs(collection(db, "laporan"));
+      const unsub = onSnapshot(collection(db, "laporan"), (querySnapshot) => {
          const data = [];
 
          querySnapshot.forEach((doc) => {
@@ -51,9 +50,9 @@ const Lihat = () => {
          );
 
          setGroupedData(sortedGrouped);
-      };
+      });
 
-      fetchData();
+      return () => unsub(); // bersihkan listener saat komponen unmount
    }, [searchTerm, selectedKategori]);
 
    return (
